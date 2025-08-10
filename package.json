@@ -1,13 +1,15 @@
 {
   "name": "react-file-hex-viewer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React component for viewing hex data of local files.",
   "main": "dist/components/HexViewer.js",
   "types": "dist/components/HexViewer.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "react-scripts start",
-    "build": "tsc",
-    "test": "react-scripts test",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
     "eject": "react-scripts eject",
     "prepublishOnly": "npm run build"
   },
@@ -25,21 +27,24 @@
   ],
   "author": "Your Name",
   "license": "MIT",
-  "peerDependencies": {
-    "@mui/material": ">=5.0.0",
-    "react": ">=18.0.0"
-  },
+
   "devDependencies": {
     "@types/react": ">=18.0.0",
     "@types/react-dom": ">=18.0.0",
-    "tsup": "^8.5.0",
-    "typescript": "^5.9.2"
+    "typescript": ">=4.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "react-file-hex-viewer": "^0.1.0",
     "web-vitals": "^5.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@mui/material": ">=5.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0"
   },
   "browserslist": {
     "production": [
